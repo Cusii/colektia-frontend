@@ -7,4 +7,4 @@
 
 ### Correr el proyecto:
 - En el ambiente de desarrollo, ejecutar `npm run serve`
-- El sistema estara corriendo en http://localhost:8080/
+- El sistema estara corriendo en `http://localhost:8080/`
