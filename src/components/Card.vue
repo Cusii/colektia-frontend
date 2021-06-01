@@ -13,8 +13,8 @@
         <h3 class="card-title">{{name}}</h3>
         <h5 class="card-title">{{ genero }}</h5>
         <p class="card-text">{{ desc }}</p>
-
-        <router-link to="" class="btn btn-warning m-1 col-5">
+       
+        <router-link to="/editar-pelicula" class="btn btn-warning m-1 col-5" @click="mostrar(id)" msg="hola">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
     <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
     <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
@@ -28,27 +28,50 @@
       </div>
     </div>
   </div>
+
+  
+      
   </div>
   </div>
+  
 </template>
 
 <script>
+
+
 import axios from "axios";
 export default {
+
   data() {},
+
+  
   props: {
+ 
     name: String,
     desc: String,
     foto: String,
     id: Number,
     genero:String
   },
+  components:{
+
+  },
+
+ 
   methods: {
     borrar(id) {
       axios
         .post("http://localhost:3000/peliculas/borrar/" + id)
         .then(console.log("La pelicula " + id + " Fue eliminada."));
     },
+    async mostrar(id) {
+      const res = await fetch("http://localhost:3000/peliculas/"+id);
+      const data = await res.json();
+     
+      console.log(data)
+      //this.genero= data.peliculas[0].genero.genero
+      //console.log(data.peliculas.genero.genero)     
+    }
   },
 };
 </script>

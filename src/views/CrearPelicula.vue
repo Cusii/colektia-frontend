@@ -61,15 +61,11 @@ export default {
 
     uploadPelicula(){
     let data = new FormData();
-    //let file = event.target.files[0];
     let elemento = document.getElementById('file-input');
-
-    //data.append('name', 'my-file')
     data.append('file', elemento.files[0])
     data.append('nombre', this.pelicula.nombre)
     data.append('descripcion', this.pelicula.descripcion)
     data.append('id_genero', this.pelicula.id_genero)
-
     let config = {
       header : {
        'Content-Type' : 'multipart/form-data'
@@ -85,14 +81,6 @@ export default {
     )
     
   },
-   /*  async uploadPelicula() {
-     await fetch("http://localhost:3000/peliculas/crear",{
-       method:'POST',
-       pelicula:this.pelicula
-     });
-     console.log(this.pelicula)
-    },
- */
   }
 };
 </script>

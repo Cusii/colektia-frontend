@@ -9,15 +9,23 @@ const routes = [
     //this generates a separate chunk(container.[hash].js) for this route
     //which is lazy-loaded when the route is visited
     component:()=>import(/* webpackChunkName: "container" */'../views/Menu.vue')
+  }, {
+    path: '/editar-pelicula',
+    name: 'Editar',
+    //route level code-splitting
+    //this generates a separate chunk(container.[hash].js) for this route
+    //which is lazy-loaded when the route is visited
+    component:()=>import(/* webpackChunkName: "container" */'../views/EditarPelicula.vue')
   },
   {
     path: '/crear-pelicula',
     name: 'Crear',
     //route level code-splitting
-    //this generates a separate chunk(about.[hash].js) for this route
+    //this generates a separate chunk(crear.[hash].js) for this route
     //which is lazy-loaded when the route is visited
-    component:()=>import(/* webpackChunkName: "about" */'../views/CrearPelicula.vue')
+    component:()=>import(/* webpackChunkName: "crear" */'../views/CrearPelicula.vue')
   },
+  
  
 
 ]
