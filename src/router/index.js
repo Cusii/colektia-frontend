@@ -1,4 +1,4 @@
- import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
 
 const routes = [
@@ -8,14 +8,16 @@ const routes = [
     //route level code-splitting
     //this generates a separate chunk(container.[hash].js) for this route
     //which is lazy-loaded when the route is visited
-    component:()=>import(/* webpackChunkName: "container" */'../views/Menu.vue')
+    component: () => import(/* webpackChunkName: "container" */'../views/Menu.vue')
+    , props: true,
   }, {
     path: '/editar-pelicula',
     name: 'Editar',
     //route level code-splitting
     //this generates a separate chunk(container.[hash].js) for this route
     //which is lazy-loaded when the route is visited
-    component:()=>import(/* webpackChunkName: "container" */'../views/EditarPelicula.vue')
+    component: () => import(/* webpackChunkName: "container" */'../views/EditarPelicula.vue'),
+    props: true,
   },
   {
     path: '/crear-pelicula',
@@ -23,10 +25,11 @@ const routes = [
     //route level code-splitting
     //this generates a separate chunk(crear.[hash].js) for this route
     //which is lazy-loaded when the route is visited
-    component:()=>import(/* webpackChunkName: "crear" */'../views/CrearPelicula.vue')
+    component: () => import(/* webpackChunkName: "crear" */'../views/CrearPelicula.vue'),
+    props: true,
   },
-  
- 
+
+
 
 ]
 
@@ -35,4 +38,4 @@ const router = createRouter({
   routes
 })
 
-export default router 
+export default router

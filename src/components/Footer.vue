@@ -1,5 +1,7 @@
 <template>
-  <footer class=" text-center bg-dark text-white">&copy; Cusi David - {{ new Date().getFullYear() }}</footer>
+  <footer class="text-center bg-dark text-white">
+    &copy; Cusi David - {{ new Date().getFullYear() }}
+  </footer>
 </template>
 
 <script>
