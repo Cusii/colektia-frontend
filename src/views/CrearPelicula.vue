@@ -14,7 +14,7 @@
       </div>
       <div class="mb-3">
         <label for="" class="form-label">Foto -</label>
-        <input type="file"  @change="upload($event)" id="file-input">
+        <input type="file"  id="file-input">
         <div v-if="selectedFile !== null">
           <img :src="urlFile" height="500px" />
         </div>
@@ -59,12 +59,16 @@ export default {
       console.log(data.peliculas.genero.genero)     
     }, */
 
-    upload(event){
+    uploadPelicula(){
     let data = new FormData();
-    let file = event.target.files[0];
+    //let file = event.target.files[0];
+    let elemento = document.getElementById('file-input');
 
-    data.append('name', 'my-file')
-    data.append('file', file)
+    //data.append('name', 'my-file')
+    data.append('file', elemento.files[0])
+    data.append('nombre', this.pelicula.nombre)
+    data.append('descripcion', this.pelicula.descripcion)
+    data.append('id_genero', this.pelicula.id_genero)
 
     let config = {
       header : {
@@ -77,31 +81,18 @@ export default {
     .then(
       response => {
         console.log(response)
-      /*   
-        this.selectedFile = event.target.files[0];
-        console.log(response.data[0].filename) */
-     
-      console.log(event.target.files)
-      console.log(event.target.files[0].name)
-
       }
     )
     
   },
-    async uploadPelicula() {
-     
+   /*  async uploadPelicula() {
      await fetch("http://localhost:3000/peliculas/crear",{
        method:'POST',
-       
        pelicula:this.pelicula
      });
-   
-
      console.log(this.pelicula)
-     
     },
-
-     
+ */
   }
 };
 </script>

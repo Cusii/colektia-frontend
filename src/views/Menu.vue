@@ -34,9 +34,9 @@ export default {
       const res = await fetch("http://localhost:3000/peliculas");
       const data = await res.json();
       this.peliculas = data.peliculas;  
-      console.log(this.peliculas)
-      this.genero= data.peliculas[0].genero.genero
-      console.log(data.peliculas.genero.genero)     
+      console.log(data)
+      //this.genero= data.peliculas[0].genero.genero
+      //console.log(data.peliculas.genero.genero)     
     },
   },
 };
