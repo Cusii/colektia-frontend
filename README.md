@@ -1,24 +1,10 @@
-# colektia-frontend
+# :computer: Configuracion del entorno Backend:
 
-## Project setup
-```
-npm install
-```
+- Clonar el repositorio en la carpeta deseada con el comando:
+ `git clone https://github.com/Cusii/colektia-frontend.git`
+- Situarse en la carpeta colektia-backend (donde se encuentra el package.json): `cd colektia-frontend`
+- Instalar las dependencias: `npm install`
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Correr el proyecto:
+- En el ambiente de desarrollo, ejecutar `npm run serve`
+- El sistema estara corriendo en http://localhost:8080/
