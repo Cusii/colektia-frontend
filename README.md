@@ -1,8 +1,8 @@
 # :computer: Configuracion del entorno Backend:
 
 - Clonar el repositorio en la carpeta deseada con el comando:
- `git clone https://github.com/Cusii/colektia-frontend.git`
-- Situarse en la carpeta colektia-backend (donde se encuentra el package.json): `cd colektia-frontend`
+-`git clone https://github.com/Cusii/colektia-frontend.git`
+- Situarse en la carpeta colektia-frontend (donde se encuentra el package.json): `cd colektia-frontend`
 - Instalar las dependencias: `npm install`
 
 ### Correr el proyecto:
